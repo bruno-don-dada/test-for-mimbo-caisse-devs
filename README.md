@@ -10,9 +10,12 @@ A simple Flutter app that displays a list of cat breeds using data from [thecata
 - Filter breeds based on friendliness scores
 
 ## Screenshots
+![screenshot_1](https://github.com/bruno-don-dada/test-for-mimbo-caisse-devs/assets/41206181/9a2b07f5-1f73-46ad-88a0-fe65f685c5ee)
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+
+## APK DEMO
+
+![apk](https://github.com/bruno-don-dada/test-for-mimbo-caisse-devs/apk/mimbo-app.apk)
 
 ## Getting Started
 
@@ -31,4 +34,5 @@ A simple Flutter app that displays a list of cat breeds using data from [thecata
    Install the dependencies:
 
 2. Install the dependencies:
+     ```bash
     flutter pub get
