@@ -88,7 +88,7 @@ class _CatBreedsScreenState extends State<CatBreedsScreen> {
             child: Text(_timeString, style: TextStyle(fontSize: 18)),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(40.0),
             child: Column(
               children: [
                 TextField(
