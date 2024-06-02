@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:async';
@@ -7,17 +6,26 @@ import 'dart:convert';
 
 import 'package:mimbo_caisse/models/cat_breed_model.dart';
 import 'package:mimbo_caisse/models/components/breed_card_cp.dart';
+
+/// A screen that displays a list of cat breeds along with the current date and time.
+/// 
+/// The screen allows users to filter the list of cat breeds based on friendliness scores.
 class CatBreedsScreen extends StatefulWidget {
   @override
   _CatBreedsScreenState createState() => _CatBreedsScreenState();
 }
 
 class _CatBreedsScreenState extends State<CatBreedsScreen> {
+  /// The current time as a formatted string.
   String _timeString = "";
+
+  /// A list of all cat breeds fetched from the API.
   List<CatBreed> _catBreeds = [];
-   
+
+  /// A filtered list of cat breeds based on the user's criteria.
   List<CatBreed> _filteredCatBreeds = [];
 
+  /// Text controllers for the filter input fields.
   TextEditingController childFriendlyController = TextEditingController();
   TextEditingController strangerFriendlyController = TextEditingController();
   TextEditingController dogFriendlyController = TextEditingController();
@@ -30,6 +38,7 @@ class _CatBreedsScreenState extends State<CatBreedsScreen> {
     _fetchCatBreeds();
   }
 
+  /// Updates the current time string every second.
   void _getTime() {
     final DateTime now = DateTime.now();
     final String formattedDateTime = _formatDateTime(now);
@@ -38,7 +47,8 @@ class _CatBreedsScreenState extends State<CatBreedsScreen> {
     });
   }
 
- Future<void> _fetchCatBreeds() async {
+  /// Fetches the list of cat breeds from the Cat API.
+  Future<void> _fetchCatBreeds() async {
     final response = await http.get(Uri.parse('https://api.thecatapi.com/v1/breeds'));
     if (response.statusCode == 200) {
       setState(() {
@@ -52,8 +62,7 @@ class _CatBreedsScreenState extends State<CatBreedsScreen> {
     }
   }
 
-  
-
+  /// Filters the list of cat breeds based on the user's input criteria.
   void _filterBreeds() {
     int childFriendly = int.tryParse(childFriendlyController.text) ?? 0;
     int strangerFriendly = int.tryParse(strangerFriendlyController.text) ?? 0;
@@ -68,12 +77,10 @@ class _CatBreedsScreenState extends State<CatBreedsScreen> {
     });
   }
 
-
+  /// Formats the given [dateTime] to a string in the format 'dd/MM/yyyy HH:mm:ss'.
   String _formatDateTime(DateTime dateTime) {
     return DateFormat('dd/MM/yyyy HH:mm:ss').format(dateTime);
   }
-
-  
 
   @override
   Widget build(BuildContext context) {

@@ -28,3 +28,7 @@ A simple Flutter app that displays a list of cat breeds using data from [thecata
    ```bash
    git clone https://github.com/bruno-don-dada/test-for-mimbo-caisse-devs.git
    cd test-for-mimbo-caisse-devs
+   Install the dependencies:
+
+2. Install the dependencies:
+    flutter pub get

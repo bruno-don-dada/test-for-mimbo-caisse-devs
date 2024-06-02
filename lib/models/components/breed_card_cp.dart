@@ -2,11 +2,17 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mimbo_caisse/models/cat_breed_model.dart';
 
-
-
+/// A widget that displays a card containing information about a cat breed.
+/// 
+/// The card shows an image of the breed (if available), the breed's name,
+/// origin, temperament, life span, weight, and friendliness scores.
 class BreedCard extends StatelessWidget {
+  /// The cat breed to be displayed in the card.
   final CatBreed breed;
 
+  /// Creates a BreedCard widget.
+  /// 
+  /// The [breed] parameter is required and must not be null.
   const BreedCard({Key? key, required this.breed}) : super(key: key);
 
   @override
